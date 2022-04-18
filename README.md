@@ -72,3 +72,10 @@ A toy language compiler based on llvm. It's just an OOP implementation of the ll
    ```
 
    
+
+## Thanks
+
+[llvm-project](https://github.com/llvm/llvm-project)
+
+[llvmRustCompiler](https://github.com/G-H-Li/llvmRustCompiler)
+
