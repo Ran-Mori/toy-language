@@ -13,6 +13,7 @@ A toy language compiler based on llvm. It's just an OOP implementation of the ll
 
 1. Source codes are just almost same as LLVM official example. I would recommend you jump to [offical page](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/) and browse the explanation.
 2. This project implements only to [chapter3(Code generation to LLVM IR)](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl03.html).
+3. Only MacOS is tested, I don't guarantee it can work well on other platforms.
 
 ## Requirements
 
@@ -22,19 +23,19 @@ A toy language compiler based on llvm. It's just an OOP implementation of the ll
 
 ## Get Stated
 
-1. Run shell commands below
+1. Install llvm 15
 
    ```shell
    cd ~
    git clone https://github.com/llvm/llvm-project.git --depth=1
    cd llvm-project
-   cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX=./build/install -D LLVM_ENABLE_RTTI=ON
+   cmake -B build -S llvm -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX=./build/install -D LLVM_ENABLE_RTTI=ON
    cmake --build build
    cd build
-   ninja install
+   make install
    ```
 
-   * Please make sure you do clone llvm version **15**. The llvm code base and including header names may vary from versions. Higher or lower llvm versions may lead to not founding of some funtions. If possible, I would recommend to download llvm 15 from [this official page](https://releases.llvm.org/download.html)，choose **LLVM source code(.sig)** option and start downloading.
+   * Please make sure you do clone llvm version **15**. The llvm code base and including header names may vary from versions. Higher or lower llvm versions may lead to not founding of some funtions. If the main git branch version is **above 15**, I would recommend to download llvm 15 from [this official page](https://releases.llvm.org/download.html)，choose **LLVM source code(.sig)** option and start downloading.
    * Please make sure you have set `CMAKE_BUILD_TYPE=Debug` and `LLVM_ENABLE_RTTI=ON` when build with cmake. Using `Realease` type or not enabling `LLVM_RTTI` may also lead to not founding of some functions.
 
 3. Set environment virable
@@ -54,7 +55,7 @@ A toy language compiler based on llvm. It's just an OOP implementation of the ll
 
    ```shell
    cd ~/toy-language
-   cmake -B build -D CMAKE_CXX_COMPILER=/usr/bin/clang++
+   cmake -B build
    cmake --build build
    ./build/toy-language
    ```
