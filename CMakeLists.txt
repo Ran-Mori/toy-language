@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(toy_language LANGUAGES CXX)
+project(toy-language LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -55,9 +55,9 @@ add_subdirectory(Error)
 add_subdirectory(Parser)
 add_subdirectory(Lexer)
 
-add_executable(toy_language main.cpp)
+add_executable(toy-language main.cpp)
 
-target_link_libraries(toy_language
+target_link_libraries(toy-language
         ${llvm_libs}
         ast
         codegen
