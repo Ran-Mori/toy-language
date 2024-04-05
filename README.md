@@ -30,10 +30,9 @@ A toy language compiler based on llvm. It's just an OOP implementation of the ll
    git clone https://github.com/llvm/llvm-project.git
    cd llvm-project
    git checkout release/15.x
-   cmake -B build -S llvm -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX=./build/install -D LLVM_ENABLE_RTTI=ON
-   cmake --build build -v
-   cd build
-   make install
+   cmake -S ./llvm -B ./build -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX=./build/install -D LLVM_ENABLE_RTTI=ON
+   cmake --build ./build -v
+   cmake --install ./build
    ```
 
    * Please make sure you do clone llvm version **15**. The llvm code base and including header names may vary from versions. Higher or lower llvm versions may lead to 'not founding of some funtions'. If the git main branch version is **above 15**, I would recommend that you download llvm 15 from [this official page](https://releases.llvm.org/download.html)，choose **LLVM source code(.sig)** option and start downloading, or just checkout the git branch to be 'release/15.x'.
@@ -56,8 +55,8 @@ A toy language compiler based on llvm. It's just an OOP implementation of the ll
 
    ```shell
    cd ~/toy-language
-   cmake -B build
-   cmake --build build -v
+   cmake -S . -B ./build
+   cmake --build ./build -v
    ./build/toy-language
    ```
 
