@@ -3,6 +3,7 @@ project(toy-language LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -v")
 
 # must set system environment LLVM_HOME to where you make install LLVM
 if (NOT DEFINED ENV{LLVM_HOME})
